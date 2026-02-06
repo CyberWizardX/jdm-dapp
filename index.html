@@ -1,182 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Japanese Dream Machine ($JDM)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japanese Dream Machine Coin ($JDMC)</title>
 
-  <!-- Basic SEO -->
-  <meta name="description" content="Japanese Dream Machine is a Solana memecoin inspired by JDM car culture and anime aesthetics. Car NFTs coming, drivable in Unity." />
+<link rel="icon" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <!-- Favicon (replace later) -->
-  <link rel="icon" type="image/png" href="favicon.png" />
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  background: black;
+  overflow-x: hidden;
+}
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+/* PARALLAX BACKGROUND */
+.background {
+  position: fixed;
+  width: 100%;
+  height: 200%;
+  background: url("bg.jpg") repeat-y;
+  background-size: cover;
+  z-index: -1;
+  animation: scrollbg 60s linear infinite;
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+@keyframes scrollbg {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
 
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(circle at top, #0a0a14, #020205);
-      color: white;
-      min-height: 100vh;
-    }
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 100px 20px;
+  text-align: center;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 80px 20px;
-      text-align: center;
-    }
+h1 {
+  font-size: 3.5rem;
+  background: linear-gradient(90deg, #ff3cac, #784ba0, #2b86c5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    h1 {
-      font-size: 3.2rem;
-      margin-bottom: 10px;
-      background: linear-gradient(90deg, #ff3cac, #784ba0, #2b86c5);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+.section {
+  margin-top: 100px;
+}
 
-    h2 {
-      font-weight: 400;
-      opacity: 0.8;
-      margin-bottom: 40px;
-    }
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
 
-    .buttons {
-      margin: 40px 0;
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+.btn {
+  padding: 14px 26px;
+  border-radius: 999px;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-    .btn {
-      padding: 14px 26px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid #fff;
-      color: white;
-      transition: 0.2s;
-    }
+.btn.primary {
+  background: linear-gradient(90deg, #ff3cac, #784ba0);
+  border: none;
+}
 
-    .btn.primary {
-      background: linear-gradient(90deg, #ff3cac, #784ba0);
-      border: none;
-    }
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 10px;
+}
 
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
+iframe {
+  border-radius: 16px;
+  border: none;
+}
 
-    .section {
-      margin-top: 80px;
-    }
-
-    .section h3 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-    }
-
-    .about {
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.6;
-      opacity: 0.9;
-    }
-
-    .roadmap {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 16px;
-      padding: 20px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 30px;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 12px;
-      object-fit: cover;
-    }
-
-    footer {
-      margin-top: 120px;
-      opacity: 0.5;
-      font-size: 0.9rem;
-    }
-  </style>
+footer {
+  margin-top: 150px;
+  opacity: 0.6;
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
 
-    <!-- HERO -->
-    <h1>Japanese Dream Machine</h1>
-    <h2>$JDMC – Own the build. Drive the dream.</h2>
+<div class="background"></div>
 
-    <div class="buttons">
-      <a href="#" class="btn primary">Buy on pump.fun</a>
-      <a href="#" class="btn">X</a>
-      <a href="#" class="btn">Discord</a>
-    </div>
+<div class="container">
 
-    <!-- ABOUT -->
-    <div class="section">
-      <h3>About</h3>
-      <p class="about">
-        Japanese Dream Machine is a Solana memecoin inspired by JDM car culture,
-        anime aesthetics, and digital ownership.
-        We’re building a collection of car NFTs that will become drivable in a
-        Unity racing experience.
-      </p>
-    </div>
+<h1>Japanese Dream Machine</h1>
+<h2>$JDMC – Own the build. Drive the dream.</h2>
 
-    <!-- ROADMAP -->
-    <div class="section">
-      <h3>Roadmap</h3>
-      <div class="roadmap">
-        <div class="card">Phase 1<br/>Token launch & memes</div>
-        <div class="card">Phase 2<br/>Car NFT collection</div>
-        <div class="card">Phase 3<br/>Playable Unity demo</div>
-      </div>
-    </div>
+<div class="buttons">
+  <button class="btn primary" onclick="connectWallet()">Connect Wallet</button>
+  <a href="#" class="btn">Buy on pump.fun</a>
+  <a href="#" class="btn">X</a>
+</div>
 
-    <!-- GALLERY -->
-    <div class="section">
-      <h3>Art</h3>
-      <div class="gallery">
-        <img src="art1.jpg" alt="JDM Art 1">
-        <img src="art2.jpg" alt="JDM Art 2">
-        <img src="art3.jpg" alt="JDM Art 3">
-      </div>
-    </div>
+<div id="wallet" style="margin-top:20px;"></div>
 
-    <footer>
-      Community-driven. No promises. Just vibes.
-    </footer>
+<!-- ABOUT -->
+<div class="section">
+<h3>About</h3>
+<p>
+A Solana memecoin inspired by JDM culture and anime.
+Car NFTs become playable vehicles inside a Unity racing world.
+</p>
+</div>
 
-  </div>
+<!-- MINT -->
+<div class="section">
+<h3>Mint Car NFT</h3>
+<div class="card">
+<button class="btn primary" onclick="mint()">Mint (soon)</button>
+<p>Drivable in Unity. On-chain ownership.</p>
+</div>
+</div>
+
+<!-- LIVE CHART -->
+<div class="section">
+<h3>Live Chart</h3>
+<iframe 
+  src="https://dexscreener.com/solana/YOURPAIR?embed=1"
+  width="100%" 
+  height="400">
+</iframe>
+</div>
+
+<!-- ROADMAP -->
+<div class="section">
+<h3>Roadmap</h3>
+<div class="card">Token Launch</div>
+<div class="card">NFT Cars</div>
+<div class="card">Unity Racing</div>
+</div>
+
+<footer>
+Community-built. No VC. No rugs. Just vibes, Drifting, Pink Slips, and Good Times.
+</footer>
+
+</div>
+
+<script>
+async function connectWallet() {
+  if (window.solana && window.solana.isPhantom) {
+    const res = await window.solana.connect();
+    document.getElementById("wallet").innerText =
+      "Connected: " + res.publicKey.toString();
+  } else {
+    alert("Install Phantom Wallet");
+  }
+}
+
+function mint() {
+  alert("Mint contract not live yet");
+}
+</script>
+
 </body>
 </html>
-
