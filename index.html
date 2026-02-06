@@ -1,172 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Japanese Dream Machine Coin ($JDMC)</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Japanese Dream Machine Coin ($JDMC)</title>
+  <link rel="icon" href="favicon.png" />
+  <style>
+    /* Reset & base */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+      background: #000;
+      color: #fff;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
 
-<link rel="icon" href="favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+    /* Parallax background layer */
+    .background {
+      position: fixed;
+      inset: 0;
+      background: url('backround.png') center top / cover repeat-y;
+      background-size: 100% auto;
+      animation: scroll-bg 140s linear infinite; /* slow cinematic drift */
+      z-index: 1;
+      will-change: transform;
+    }
 
-<style>
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Orbitron', sans-serif;
-  color: white;
-  background: black;
-  overflow-x: hidden;
-}
+    @keyframes scroll-bg {
+      from { background-position: center 0; }
+      to   { background-position: center 12000px; } /* adjust pixels for speed */
+    }
 
-/* PARALLAX BACKGROUND */
-.background {
-  position: fixed;
-  width: 100%;
-  height: 200%;
-  background: url("bg.jpg") repeat-y;
-  background-size: cover;
-  z-index: -1;
-  animation: scrollbg 60s linear infinite;
-}
+    /* Hero section - movie poster feel */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('art1.jpg') center center / cover no-repeat; /* change to art2.jpg if better */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 2;
+    }
 
-@keyframes scrollbg {
-  from { transform: translateY(0); }
-  to { transform: translateY(-50%); }
-}
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5); /* darker overlay for text readability + mood */
+      z-index: 1;
+    }
 
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 100px 20px;
-  text-align: center;
-}
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 0 20px;
+    }
 
-h1 {
-  font-size: 3.5rem;
-  background: linear-gradient(90deg, #ff3cac, #784ba0, #2b86c5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+    h1 {
+      font-size: 5rem;
+      margin: 0 0 0.4rem;
+      text-shadow: 0 0 30px rgba(255, 80, 0, 0.8); /* neon orange glow */
+    }
 
-.section {
-  margin-top: 100px;
-}
+    h2 {
+      font-size: 2.2rem;
+      margin: 0 0 2.5rem;
+      opacity: 0.95;
+    }
 
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
+    .buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-.btn {
-  padding: 14px 26px;
-  border-radius: 999px;
-  border: 1px solid white;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-}
+    .btn {
+      padding: 1rem 2.5rem;
+      font-size: 1.3rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      color: white;
+    }
 
-.btn.primary {
-  background: linear-gradient(90deg, #ff3cac, #784ba0);
-  border: none;
-}
+    .btn.primary {
+      background: linear-gradient(135deg, #ff4d00, #ff8c00);
+      box-shadow: 0 0 30px rgba(255, 77, 0, 0.7);
+    }
 
-.card {
-  background: rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 20px;
-  margin: 10px;
-}
+    .btn.secondary {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
 
-iframe {
-  border-radius: 16px;
-  border: none;
-}
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    }
 
-footer {
-  margin-top: 150px;
-  opacity: 0.6;
-}
-</style>
+    /* Main content area */
+    .content {
+      position: relative;
+      z-index: 3;
+      background: rgba(0,0,0,0.75);
+      padding: 5rem 2rem;
+      min-height: 100vh;
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .content h3 {
+      font-size: 2.5rem;
+      margin: 3rem 0 1rem;
+      color: #ff8c00;
+    }
+
+    .content p {
+      font-size: 1.3rem;
+      line-height: 1.7;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #ff8c00, transparent);
+      margin: 4rem auto;
+      width: 60%;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 3.5rem; }
+      h2 { font-size: 1.8rem; }
+      .background { animation-duration: 80s; } /* faster on mobile */
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="background"></div>
+  <div class="background"></div>
 
-<div class="container">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Japanese Dream Machine</h1>
+      <h2>$JDMC – Own the build. Drive the dream.</h2>
 
-<h1>Japanese Dream Machine</h1>
-<h2>$JDMC – Own the build. Drive the dream.</h2>
+      <div class="buttons">
+        <button class="btn primary" onclick="alert('Wallet connect coming soon!')">Connect Wallet</button>
+        <a href="https://pump.fun" target="_blank" class="btn primary">Buy on pump.fun</a>
+        <a href="https://x.com" target="_blank" class="btn secondary">X</a>
+      </div>
+    </div>
+  </section>
 
-<div class="buttons">
-  <button class="btn primary" onclick="connectWallet()">Connect Wallet</button>
-  <a href="#" class="btn">Buy on pump.fun</a>
-  <a href="#" class="btn">X</a>
-</div>
+  <div class="content">
+    <h3>About</h3>
+    <p>A Solana memecoin inspired by JDM culture and anime. Car NFTs become playable vehicles inside a Unity racing world.</p>
 
-<div id="wallet" style="margin-top:20px;"></div>
+    <h3>Mint Car NFT</h3>
+    <p>Mint (soon)</p>
+    <p>Drivable in Unity. On-chain ownership.</p>
 
-<!-- ABOUT -->
-<div class="section">
-<h3>About</h3>
-<p>
-A Solana memecoin inspired by JDM culture and anime.
-Car NFTs become playable vehicles inside a Unity racing world.
-</p>
-</div>
+    <h3>Live Chart</h3>
+    <p>Coming soon — track $JDMC here.</p>
 
-<!-- MINT -->
-<div class="section">
-<h3>Mint Car NFT</h3>
-<div class="card">
-<button class="btn primary" onclick="mint()">Mint (soon)</button>
-<p>Drivable in Unity. On-chain ownership.</p>
-</div>
-</div>
+    <h3>Roadmap</h3>
+    <p>Token Launch</p>
+    <p>NFT Cars</p>
+    <p>Unity Racing</p>
 
-<!-- LIVE CHART -->
-<div class="section">
-<h3>Live Chart</h3>
-<iframe 
-  src="https://dexscreener.com/solana/YOURPAIR?embed=1"
-  width="100%" 
-  height="400">
-</iframe>
-</div>
-
-<!-- ROADMAP -->
-<div class="section">
-<h3>Roadmap</h3>
-<div class="card">Token Launch</div>
-<div class="card">NFT Cars</div>
-<div class="card">Unity Racing</div>
-</div>
-
-<footer>
-Community-built. No VC. No rugs. Just vibes, Drifting, Pink Slips, and Good Times.
-</footer>
-
-</div>
-
-<script>
-async function connectWallet() {
-  if (window.solana && window.solana.isPhantom) {
-    const res = await window.solana.connect();
-    document.getElementById("wallet").innerText =
-      "Connected: " + res.publicKey.toString();
-  } else {
-    alert("Install Phantom Wallet");
-  }
-}
-
-function mint() {
-  alert("Mint contract not live yet");
-}
-</script>
+    <hr />
+  </div>
 
 </body>
 </html>
